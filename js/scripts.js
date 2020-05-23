@@ -60,4 +60,11 @@ list.addEventListener('click', (event) => {
     const itemKey = event.target.parentElement.dataset.key;
     checkTodo(itemKey);
   }
+  
+  if(event.target.classList.contains('js-delete-todo')) {
+    const item = document.getElementsByClassName('js-todo-list');
+	const itemKey = event.target.parentElement.dataset.key;
+	console.log(itemKey);
+	document.querySelector(`[data-key="${itemKey}"]`).innerHTML = "";
+  }
 });
